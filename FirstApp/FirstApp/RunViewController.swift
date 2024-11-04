@@ -8,26 +8,39 @@
 import UIKit
 
 class RunViewController: UIViewController {
-    @IBOutlet weak var runningTitle: UITextField!
     @IBOutlet weak var distance: UITextField!
     @IBOutlet weak var time: UITextField!
-    @IBOutlet weak var notes: UITextView!
-    
-    @IBAction func runningSave(_ sender: UIButton) {
-        guard let dist = distance.text, !dist.isEmpty,
-              let tm = time.text, !tm.isEmpty else {
-                //showAlert(" Enter distance and time ")
-                return
-            }
-        print(dist)
-     }
+    @IBOutlet weak var runningTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let welcomeMessages = [
+            "Hello, runner! How was your run today?",
+            "Hey there! Ready to track your next run?",
+            "Welcome back, athlete! Ready for another session?",
+            "Hi, runner! Hope you’re feeling energized for your run!",
+            "Hello! Ready to set some new personal bests?",
+            "Welcome! How did today’s run go?",
+            "Hey, runner! Let’s see how fast you were today!",
+            "Good to see you again! Ready to hit the road?",
+            "Hello! How was your training today?",
+            "Hi there! Can’t wait to see your running stats!"
+        ]
 
+        runningTitle.text = welcomeMessages.randomElement()
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSummary" {
+            if let detailsVC = segue.destination as? SummaryController{
+                detailsVC.runningTitle = runningTitle.text
+                detailsVC.distance = distance.text
+                detailsVC.time = time.text
+            }
+        }
+    }
 
     /*
      // MARK: - Navigation
