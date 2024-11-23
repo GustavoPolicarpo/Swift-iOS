@@ -21,6 +21,8 @@
 		9C7979452CE120A600699789 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C79793B2CE120A600699789 /* NavigationBar.swift */; };
 		9C7979462CE120A600699789 /* SwiftUIAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C79793C2CE120A600699789 /* SwiftUIAppApp.swift */; };
 		9C79794D2CE121B800699789 /* CarouselTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C79794C2CE121B800699789 /* CarouselTabView.swift */; };
+		9C80EDB92CF210F70001BA84 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9C80EDB82CF210F70001BA84 /* Alamofire */; };
+		9C80EDBC2CF2143E0001BA84 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C80EDBB2CF2143E0001BA84 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 		9C79793B2CE120A600699789 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		9C79793C2CE120A600699789 /* SwiftUIAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAppApp.swift; sourceTree = "<group>"; };
 		9C79794C2CE121B800699789 /* CarouselTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTabView.swift; sourceTree = "<group>"; };
+		9C80EDBB2CF2143E0001BA84 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		9CD2BDFF2CE0D7AA0077B04F /* SwiftUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD2BE0F2CE0D7AB0077B04F /* SwiftUIAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD2BE192CE0D7AB0077B04F /* SwiftUIAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C80EDB92CF210F70001BA84 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +122,7 @@
 		9C79793D2CE120A600699789 /* SwiftUIApp */ = {
 			isa = PBXGroup;
 			children = (
+				9C80EDBA2CF214230001BA84 /* API */,
 				9C13488E2CE17D86003A044B /* GoalList */,
 				9C7979342CE120A600699789 /* Preview Content */,
 				9C7979352CE120A600699789 /* Assets.xcassets */,
@@ -175,6 +180,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		9C80EDBA2CF214230001BA84 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9C80EDBB2CF2143E0001BA84 /* APIService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		9CD2BDF62CE0D7AA0077B04F = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +225,7 @@
 			);
 			name = SwiftUIApp;
 			packageProductDependencies = (
+				9C80EDB82CF210F70001BA84 /* Alamofire */,
 			);
 			productName = SwiftUIApp;
 			productReference = 9CD2BDFF2CE0D7AA0077B04F /* SwiftUIApp.app */;
@@ -295,6 +309,9 @@
 			);
 			mainGroup = 9CD2BDF62CE0D7AA0077B04F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9C80EDB72CF210F70001BA84 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9CD2BE002CE0D7AA0077B04F /* Products */;
 			projectDirPath = "";
@@ -347,6 +364,7 @@
 				9C1348922CE17E7F003A044B /* GoalType.swift in Sources */,
 				9C7979442CE120A600699789 /* FeatureType.swift in Sources */,
 				9C13489A2CE188E6003A044B /* GoalContainer.swift in Sources */,
+				9C80EDBC2CF2143E0001BA84 /* APIService.swift in Sources */,
 				9C7979452CE120A600699789 /* NavigationBar.swift in Sources */,
 				9C7979462CE120A600699789 /* SwiftUIAppApp.swift in Sources */,
 				9C1348982CE17F2D003A044B /* ServiceType.swift in Sources */,
@@ -667,6 +685,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9C80EDB72CF210F70001BA84 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9C80EDB82CF210F70001BA84 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C80EDB72CF210F70001BA84 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9CD2BDF72CE0D7AA0077B04F /* Project object */;
 }

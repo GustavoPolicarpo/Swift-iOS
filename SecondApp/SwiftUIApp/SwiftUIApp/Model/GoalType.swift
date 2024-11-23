@@ -5,7 +5,7 @@
 //  Created by user270444 on 11/10/24.
 //
 
-struct GoalType: Identifiable{
+struct GoalType: Identifiable, Decodable, Encodable {
     let id: Int
     let icone: String
     let titulo: String
